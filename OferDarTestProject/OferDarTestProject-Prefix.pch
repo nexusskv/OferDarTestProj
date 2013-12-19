@@ -1,0 +1,46 @@
+//
+// Prefix header for all source files of the 'OferDarTestProject' target in the 'OferDarTestProject' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+#define SAFE_RELEASE(_OBJ_)     [_OBJ_ release], _OBJ_ = nil;
+#define kSuccessMsg     @"Json load successful!"
+#define kEmptyMsg       @"Json file load failed!"
+#define kFileEmptyMsg   @"Json file is empty!"
+
+#ifdef __IPHONE_6_1
+# define OPEN_MAIL_SENDER	presentViewController:mailSender animated:YES completion:nil 
+# define CLOSE_MAIL_SENDER	dismissViewControllerAnimated:YES completion:nil
+#elif __IPHONE_6_0
+# define OPEN_MAIL_SENDER   presentViewController:mailSender animated:YES completion:nil
+# define CLOSE_MAIL_SENDER	dismissViewControllerAnimated:YES completion:nil
+#elif __IPHONE_5_1
+# define OPEN_MAIL_SENDER   presentModalViewController:mailSender animated:YES
+# define CLOSE_MAIL_SENDER	dismissViewControllerAnimated:YES
+#elif __IPHONE_5_0
+# define OPEN_MAIL_SENDER   presentModalViewController:mailSender animated:YES
+# define CLOSE_MAIL_SENDER	dismissViewControllerAnimated:YES
+#elif __IPHONE_4_3
+# define OPEN_MAIL_SENDER   presentModalViewController:mailSender animated:YES
+# define CLOSE_MAIL_SENDER	dismissViewControllerAnimated:YES
+#elif __IPHONE_4_2
+# define OPEN_MAIL_SENDER   presentModalViewController:mailSender animated:YES
+# define CLOSE_MAIL_SENDER	dismissViewControllerAnimated:YES
+#elif __IPHONE_4_1
+# define OPEN_MAIL_SENDER   presentModalViewController:mailSender animated:YES
+# define CLOSE_MAIL_SENDER	dismissViewControllerAnimated:YES
+#endif
+
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "SBJson.h"
+    #import "ASIHTTPRequest.h"
+    #import "AsyncImageDownloader.h"
+    #import <SystemConfiguration/SystemConfiguration.h>
+#endif
